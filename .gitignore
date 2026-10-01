@@ -1,0 +1,4 @@
+__pycache__/
+*.py[cod]
+zamac_fuds.sqlite3
+.env
