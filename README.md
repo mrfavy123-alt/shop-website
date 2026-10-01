@@ -21,3 +21,4 @@ A restaurant storefront for Nigerian and continental meals, pastries, small chop
 Orders use Supabase's catalog prices and are saved with their item snapshots in one database transaction. Mailgun runs after that commit. Booking requests, contact messages, course enrollments, and two scheduled training instalments are saved to their own tables. When Paystack is configured, each training instalment uses a separate hosted payment and the server verifies its reference and amount before marking it paid. Without a Paystack key, the enrollment request is still saved and no payment is charged. The course and materials prices shown in the demo are sample prices to replace with approved fees.
 
 The local SQLite fallback remains available when all Supabase settings are omitted. It saves orders, booking requests, contact messages, and training enrolments locally. Google login requires the Supabase configuration above.
+# shop-website
