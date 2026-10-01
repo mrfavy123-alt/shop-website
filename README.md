@@ -22,3 +22,4 @@ Orders use Supabase's catalog prices and are saved with their item snapshots in 
 
 The local SQLite fallback remains available when all Supabase settings are omitted. It saves orders, booking requests, contact messages, and training enrolments locally. Google login requires the Supabase configuration above.
 # shop-website
+# shop-website
