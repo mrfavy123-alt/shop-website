@@ -20,11 +20,11 @@ A restaurant storefront for Nigerian and continental meals, pastries, small chop
 
 ## Deploying to Vercel
 
-The `api/` directory exposes the same API routes as Vercel Python Functions. Vercel's function filesystem is not persistent, so configure Supabase before using the forms or checkout; the local SQLite fallback is only for running `python3 server.py` locally.
+The `api/` directory contains Node.js functions for the shop API. `package.json` selects Node.js 24 for Vercel deployments. Vercel provides that runtime during deployment; Node.js does not need to be installed in the website's browser. The local Python server remains available for development. Vercel function storage is temporary, so configure Supabase before using the forms or checkout; the local SQLite fallback is only for `python3 server.py`.
 
 1. Run [`supabase_schema.sql`](supabase_schema.sql) in the Supabase SQL editor if you have not already.
 2. In Vercel, open **Project Settings → Environment Variables** and add `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, and `SUPABASE_SECRET_KEY` from the Supabase project. Add `PAYSTACK_SECRET_KEY` to enable instalment payments, and the Mailgun variables if you want order confirmation emails.
-3. Redeploy the Vercel project so the functions receive the new environment variables.
+3. Redeploy the Vercel project so it builds the Node.js functions and loads the environment variables.
 
 The local SQLite database is not used by Vercel functions because its filesystem is temporary and isolated between invocations.
 
